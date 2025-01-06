@@ -250,7 +250,7 @@ services:
     image: systementry-5116
     container_name: systementry-5116
     ports: 
-      - 8023:8023
+      - 8024:8024
     env_file: .env
     depends_on:
       - mongo

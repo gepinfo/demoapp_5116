@@ -47,6 +47,23 @@ const Sefscreen =()=> {
     User.created_by = sessionStorage.getItem('email') || '';
     Id = sessionStorage.getItem('Id');
     setImage(sessionStorage.getItem('Image'));
+    
+    GpSEF(Id).then((logindetails:any) => {
+    setfirstName(logindetails.data.user.firstname);
+ 	 	setlastName(logindetails.data.user.lastname);});
+                                const colors = ['#006400', '#B22222'];
+
+                                getChartData(Id).then((getCharts:any) => {
+                                  // tslint:disable-next-line:radix
+                                  open = getCharts.data1;
+                                  console.log(open);
+                                  // tslint:disable-next-line:radix
+                                  close = getCharts.data2;
+                                  console.log(close);
+
+                                
+    });
+    
     },[])
      
     
